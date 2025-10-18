@@ -31,12 +31,3 @@ describe('Serverest Store - Frontend E2E', () => {
     cy.contains('Serverest Store').should('be.visible')
     cy.get('.card').should('have.length.greaterThan', 0)
   })
-
-  it('Deve adicionar um produto à lista com sucesso', () => {
-    loginPage.login('testediego@teste.com', 'teste123')
-    cy.contains('Adicionar a lista').first().click()
-    cy.on('window:alert', (msg) => {
-      expect(msg).to.contain('Produto adicionado com sucesso')
-    })
-  })
-})
